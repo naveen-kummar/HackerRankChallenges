@@ -1,0 +1,7 @@
+
+// Complete the findMedian function below.
+int findMedian(vector<int> arr) {
+
+nth_element(arr.begin(), arr.begin() + (arr.size()/2), arr.end());
+return *(arr.begin() + (arr.size() / 2));
+}
