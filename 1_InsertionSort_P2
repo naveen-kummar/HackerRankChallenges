@@ -1,0 +1,24 @@
+// Complete the insertionSort2 function below.
+void insertionSort2(int n, vector<int> arr) {
+
+for(int i = 1; i < n; i++)
+{
+ int key = arr[i];
+ int k = i;
+ while((k - 1) >= 0 && arr[k-1] > key)
+ {
+     arr[k] = arr[k-1];
+     k = k -1;
+ }
+
+ arr[k] = key;
+
+ for_each(arr.begin(), arr.end(), [](int x){cout << x << ' ';});
+
+ cout << endl;
+ // cout << "Pass: " << i << endl;
+
+}
+
+
+}
