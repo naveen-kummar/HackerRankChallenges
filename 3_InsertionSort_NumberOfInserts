@@ -1,0 +1,31 @@
+
+// Complete the runningTime function below.
+int runningTime(vector<int> arr) {
+
+int n = arr.size();
+int NumberOfIns = 0;
+for(int i = 1; i < n; i++)
+{
+ int key = arr[i];
+ int k = i;
+
+ while((k - 1) >= 0 && arr[k-1] > key)
+ {
+     arr[k] = arr[k-1];
+     k = k -1;
+
+     ++NumberOfIns;
+ }
+
+
+
+ arr[k] = key;
+
+// for_each(arr.begin(), arr.end(), [](int x){cout << x << ' ';});
+
+ //cout << NumberOfIns;
+ // cout << "Pass: " << i << endl;
+
+}
+ return NumberOfIns;
+}
