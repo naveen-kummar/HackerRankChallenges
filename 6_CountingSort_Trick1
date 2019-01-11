@@ -1,0 +1,36 @@
+
+// Complete the countSort function below.
+void countSort(vector<vector<string>> arr) {
+
+////vector<vector<string>> FirstHalf;
+/////copy_n(arr.begin(), arr.size()/2, back_inserter(FirstHalf));
+int nHalfSize = arr.size()/2;
+int Counter = 0;
+for_each(arr.begin(), arr.end(),
+         [&Counter, nHalfSize](vector<string> &Orginal)  {
+           if (Counter < nHalfSize) {
+             Orginal.push_back("Empty");
+             
+           } else {
+             Orginal.push_back("Add");
+           }
+           Counter++;
+         });
+stable_sort(arr.begin(), arr.end(),[](vector<string> Elem1, vector<string> Elem2){return stoi(Elem1[0]) < stoi(Elem2[0]);});
+
+for_each(arr.begin(), arr.end(), [](vector<string> Element){
+    if(Element[2] == "Empty")
+    {
+      cout << "- ";
+    }
+    else
+    {
+      cout << Element[1] << " ";
+    }
+
+});
+
+
+
+
+}
