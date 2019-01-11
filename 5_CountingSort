@@ -1,0 +1,36 @@
+// Complete the countingSort function below.
+vector<int> countingSort(vector<int> arr) {
+  std::map<int, int> Counter;
+
+  for_each(begin(arr), end(arr), [&Counter](int elem) {
+
+
+    auto search = Counter.find(elem);
+    if (search != Counter.end())
+      Counter[elem]++;
+    else 
+    {
+        Counter.emplace(elem, 1);
+    }
+    cout << "Incrementing value at " << elem << " to " << (Counter[elem] )
+         << endl;
+  });
+
+  arr.clear();
+
+  cout << "The size of arr is: " << arr.size() << endl;
+
+  for_each(begin(Counter), end(Counter), [&arr, Counter](std::pair<int, int> elem1) {
+    cout << "The Value: " << elem1.first << " is repeated for " << elem1.second
+         << " times." << endl;
+    for (int i = 0; i < elem1.second; i++) {
+      arr.push_back(elem1.first);
+      cout << "The size of arr in loop is: " << arr.size() << endl;
+    }
+
+  });
+
+  return arr;
+
+
+}
