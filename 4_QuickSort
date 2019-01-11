@@ -1,0 +1,39 @@
+// Complete the quickSort function below.
+vector<int> quickSort(vector<int> arr) {
+    int pivot = arr[0];
+    auto LowPivotIt = begin(arr);
+    auto HighPivotIt = begin(arr);
+   // for_each(begin(arr) + 1, end(arr), [p=pivot](int &elem){if(elem < p){}else if(elem > p){}};
+   for(auto it = begin(arr) + 1; it != end(arr); it++)
+   {
+       //cout << "\\\\\\\\\\\\\\\"" << endl;
+       if(*it < pivot)
+       {
+          // cout<< "Low Swaping: " << *LowPivotIt << " and " << *it << endl;
+           auto CurrIt = it;
+           while( HighPivotIt  < CurrIt )
+           {
+               iter_swap(CurrIt - 1, CurrIt);
+               CurrIt--;
+           }
+            iter_swap(LowPivotIt, CurrIt);
+            LowPivotIt++;
+            HighPivotIt++;
+       }
+       else if(*it == pivot)
+       {
+         //  cout<< "High Swaping: " << *(HighPivotIt + 1) << " and " << *it <<endl;
+           iter_swap(HighPivotIt + 1, it);
+           HighPivotIt++;
+       }
+       else if(*it > pivot)
+       {
+           //HighPivotIt++;
+       }
+
+       //cout << "\\\\\\\\\\\\\\\"" << endl;
+   }
+
+return arr;
+
+}
