@@ -1,0 +1,28 @@
+
+// Complete the insertionSort function below.
+int insertionSort(vector<int> arr) {
+cout << "New List" << endl;
+int nTotalShifts = 0;
+int ShiftMadetillnow = 0;
+  for (int i = 1; i < arr.size(); i++) 
+  {
+    ShiftMadetillnow = 0;
+     cout << "Processing i: " << arr[i] << endl;
+    for (int j = i - 1; j >= 0; j--) {
+
+      if (arr[i] < arr[j]) {
+        nTotalShifts += ((i - j) - ShiftMadetillnow);
+        cout << "Found " << arr[j] << " greater than " << arr[i]
+             << " with i as " << i << " and j as " << j << " so shift is "
+             << ((i - j) - ShiftMadetillnow) << endl;
+        ++ShiftMadetillnow;
+      } else if (arr[i] >= arr[j])
+      {
+        ++ShiftMadetillnow;
+      }
+      }
+
+     
+  }
+    return nTotalShifts;
+}
