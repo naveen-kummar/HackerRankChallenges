@@ -3,7 +3,7 @@
 using namespace std;
 
 vector<string> split_string(string);
-int MergeSort(vector<int> arr);
+int MergeSort(vector<int> &arr);
 
     // Complete the insertionSort function below.
     int insertionSort(vector<int> arr) {
@@ -13,7 +13,7 @@ int MergeSort(vector<int> arr);
 
 }
 
-int MergeSort(vector<int> arr) {
+int MergeSort(vector<int> &arr) {
   int n = arr.size();
   if (n == 1) 
     return 0;
